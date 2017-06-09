@@ -28,6 +28,8 @@
   window.onload = () => {
     const myStorage = localStorage;
     const popupNode = document.getElementById('popup');
+
+    // Using bubbling
     popupNode.addEventListener('click', (e) => {
       popupNode.style.display = 'none';
 
@@ -37,6 +39,7 @@
       }
     });
 
+    // Allow popup after 10 seconds if no button has been clicked
     if (!myStorage.isPopupDisabled || Date.now() - myStorage.disableTime > 10000) {
       setTimeout(() => {
         popupNode.style.display = 'block';
