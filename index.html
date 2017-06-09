@@ -6,5 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
+  <style type="text/css">
+    #popup {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background-color: red;
+      height: 50%;
+      width: 50%;
+      display: none;
+    }
+  </style>
 <body>
+  <div id="popup">
+    <h4>Do you want to chat with a customer representative?</h4>
+    <button>Yes</button>
+    <button>No</button>
+  </div>
 </body>
+<script type="text/javascript">
+  window.onload = () => {
+    const popupNode = document.getElementById('popup');
+    setTimeout(() => {
+      popupNode.style.display = 'block';
+    }, 2000);
+  };
+</script>
